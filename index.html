@@ -1,174 +1,640 @@
-<!-- قسم: مبادئ المحاسبة في ألمانيا والبرامج والتطبيق العملي -->
-<section id="buchhaltung-praxis" dir="rtl" style="max-width: 1200px; margin: 32px auto; padding: 24px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; color: #e6edf3; background: #0f172a; border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 16px;">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ELSAYEDELSONBATI — تعلم المحاسبة والمالية في ألمانيا | Buchhaltung & Rechnungswesen</title>
+  <style>
+    :root {
+      --bg-main: #090d16;
+      --bg-card: #111827;
+      --bg-card-soft: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-strong: #0284c7;
+      --emerald: #34d399;
+      --amber: #fbbf24;
+      --border: rgba(148, 163, 184, 0.18);
+    }
 
-  <!-- رأس القسم وأزرار التنقل بين المحاور -->
-  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; border-bottom: 1px solid rgba(148, 163, 184, 0.18); padding-bottom: 18px; margin-bottom: 24px;">
-    <div>
-      <span style="display: inline-block; background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.35); padding: 4px 12px; border-radius: 999px; font-size: 13px; font-weight: 600; margin-bottom: 8px;">
-        دليل الدخول إلى سوق Buchhaltung في ألمانيا
-      </span>
-      <h2 style="margin: 0 0 6px 0; font-size: 24px; color: #f8fafc;">
-        مبادئ المحاسبة، شرح البرامج، والتطبيق العملي في ألمانيا
-      </h2>
-      <p style="margin: 0; color: #94a3b8; font-size: 15px;">
-        مرجع عملي خطوة بخطوة لمن يستعد للعمل كمحاسب أو موظف Buchhaltung في الشركات والمكاتب المحاسبية بألمانيا.
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Arabic", Tahoma, sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* الشريط العلوي */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(9, 13, 22, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      object-fit: contain;
+      background: #0f172a;
+      border: 1px solid var(--border);
+      padding: 4px;
+    }
+
+    .brand-title {
+      font-weight: 800;
+      font-size: 17px;
+      letter-spacing: 0.3px;
+      color: #ffffff;
+    }
+
+    .brand-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-link {
+      padding: 8px 14px;
+      border-radius: 9px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #e2e8f0;
+      background: #131c2e;
+      border: 1px solid var(--border);
+      transition: 0.2s ease;
+    }
+
+    .nav-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* الحاوية العامة */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 28px 20px;
+    }
+
+    /* قسم المقدمة والبحث */
+    .hero {
+      background: linear-gradient(135deg, rgba(2, 132, 199, 0.16), rgba(16, 185, 129, 0.08));
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px 24px;
+      margin-bottom: 28px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.14);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px 0;
+      font-size: 28px;
+      color: #ffffff;
+    }
+
+    .hero p {
+      margin: 0 0 18px 0;
+      color: var(--text-muted);
+      font-size: 15.5px;
+      max-width: 820px;
+    }
+
+    .search-box {
+      display: flex;
+      gap: 10px;
+      max-width: 680px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(148, 163, 184, 0.32);
+      background: #0b1120;
+      color: #ffffff;
+      font-size: 14.5px;
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: var(--accent);
+    }
+
+    /* الأقسام */
+    .section-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 28px;
+    }
+
+    .section-header {
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+    }
+
+    .section-header h2 {
+      margin: 0 0 4px 0;
+      font-size: 22px;
+      color: #ffffff;
+    }
+
+    .section-header p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 14.5px;
+    }
+
+    /* حاسبة الضريبة MwSt. */
+    .vat-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .vat-input {
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.32);
+      background: #0b1120;
+      color: #ffffff;
+      font-size: 15px;
+      min-width: 210px;
+    }
+
+    .vat-rate-btn {
+      padding: 10px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg-card-soft);
+      color: #e2e8f0;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .vat-rate-btn.active {
+      background: var(--accent-strong);
+      border-color: var(--accent);
+      color: #ffffff;
+    }
+
+    .vat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+    }
+
+    .vat-card {
+      background: var(--bg-card-soft);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .vat-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .vat-value {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--emerald);
+    }
+
+    /* القاموس */
+    .glossary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 14px;
+    }
+
+    .glossary-card {
+      background: var(--bg-card-soft);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .glossary-term {
+      font-weight: 800;
+      font-size: 16px;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .glossary-desc {
+      margin: 0;
+      font-size: 14px;
+      color: #cbd5e1;
+    }
+
+    /* الفوتر */
+    .footer {
+      text-align: center;
+      padding: 24px 20px 36px;
+      color: var(--text-muted);
+      font-size: 13.5px;
+      border-top: 1px solid var(--border);
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- الشريط العلوي -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="#top" class="brand">
+        <img
+          src="elsayedelsonbati_brand_logo.svg"
+          alt="شعار ELSAYEDELSONBATI"
+          class="brand-logo"
+          onerror="this.style.display='none'"
+        />
+        <div>
+          <div class="brand-title">ELSAYEDELSONBATI</div>
+          <div class="brand-sub">تعلم المحاسبة والمالية في ألمانيا • Buchhaltung &amp; Rechnungswesen</div>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="التنقل الرئيسي">
+        <a href="#buchhaltung-praxis" class="nav-link">الأقسام العملية</a>
+        <a href="#vat-calculator" class="nav-link">حاسبة MwSt.</a>
+        <a href="#glossary-section" class="nav-link">القاموس</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+
+    <!-- المقدمة والبحث المباشر -->
+    <section class="hero">
+      <span class="hero-badge">elsayedelsonbati.com • منصة المحاسبة في ألمانيا</span>
+      <h1>دليلك العملي لدخول سوق المحاسبة في ألمانيا</h1>
+      <p>
+        شرح مبسّط وعملي لمبادئ المحاسبة الألمانية، البرامج المحاسبية الأكثر استخداماً، خطوات العمل اليومي،
+        وحاسبة ضريبة القيمة المضافة والقاموس المحاسبي.
       </p>
-    </div>
+      <div class="search-box">
+        <input
+          type="search"
+          id="siteSearchInput"
+          class="search-input"
+          placeholder="ابحث في المصطلحات والأقسام (مثال: DATEV، Bilanz، Soll، SKR 03، MwSt.)..."
+          oninput="filterContent()"
+        />
+      </div>
+    </section>
 
-    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-      <button type="button" onclick="switchBuchtTab('prinzipien')" id="btn-prinzipien" style="cursor: pointer; padding: 10px 16px; border-radius: 10px; border: 1px solid #38bdf8; background: #0284c7; color: #fff; font-weight: 600; font-size: 14px;">
-        1. مبادئ المحاسبة
-      </button>
-      <button type="button" onclick="switchBuchtTab('software')" id="btn-software" style="cursor: pointer; padding: 10px 16px; border-radius: 10px; border: 1px solid rgba(148, 163, 184, 0.3); background: #1e293b; color: #e2e8f0; font-weight: 600; font-size: 14px;">
-        2. البرامج المحاسبية
-      </button>
-      <button type="button" onclick="switchBuchtTab('praxis')" id="btn-praxis" style="cursor: pointer; padding: 10px 16px; border-radius: 10px; border: 1px solid rgba(148, 163, 184, 0.3); background: #1e293b; color: #e2e8f0; font-weight: 600; font-size: 14px;">
-        3. التطبيق العملي اليومي
-      </button>
-    </div>
-  </div>
+    <!-- القسم الرئيسي: مبادئ المحاسبة في ألمانيا والبرامج والتطبيق العملي -->
+    <section id="buchhaltung-praxis" dir="rtl" style="max-width: 1200px; margin: 0 auto 28px auto; padding: 24px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; color: #e6edf3; background: #0f172a; border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 16px;">
 
-  <!-- المحور الأول: مبادئ المحاسبة في ألمانيا -->
-  <div id="tab-prinzipien" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px;">
-    <div style="background: #1e293b; border: 1px solid rgba(148, 163, 184, 0.16); border-radius: 12px; padding: 18px;">
-      <h3 style="margin: 0 0 10px 0; color: #38bdf8; font-size: 17px;">القيد المزدوج وقاعدة Soll / Haben</h3>
-      <p style="margin: 0 0 10px 0; color: #cbd5e1; font-size: 14px; line-height: 1.7;">
-        في ألمانيا تعتمد المحاسبة النظامية على <strong>Doppelte Buchführung</strong>: كل عملية مالية تؤثر على حسابين على الأقل (مدين <strong>Soll</strong> ودائن <strong>Haben</strong>) بقيمة متساوية.
-      </p>
-      <ul style="margin: 0; padding-right: 18px; color: #94a3b8; font-size: 13.5px; line-height: 1.7;">
-        <li><strong>Aktivkonten (الأصول):</strong> تزيد في <em>Soll</em> وتنقص في <em>Haben</em>.</li>
-        <li><strong>Passivkonten (الخصوم وحقوق الملكية):</strong> تزيد في <em>Haben</em> وتنقص في <em>Soll</em>.</li>
-        <li><strong>Aufwand (المصروفات):</strong> تُسجّل غالباً في <em>Soll</em>.</li>
-        <li><strong>Ertrag (الإيرادات):</strong> تُسجّل غالباً في <em>Haben</em>.</li>
-      </ul>
-    </div>
+      <!-- رأس القسم وأزرار التنقل بين المحاور -->
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; border-bottom: 1px solid rgba(148, 163, 184, 0.18); padding-bottom: 18px; margin-bottom: 24px;">
+        <div>
+          <span style="display: inline-block; background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.35); padding: 4px 12px; border-radius: 999px; font-size: 13px; font-weight: 600; margin-bottom: 8px;">
+            دليل الدخول إلى سوق Buchhaltung في ألمانيا
+          </span>
+          <h2 style="margin: 0 0 6px 0; font-size: 24px; color: #f8fafc;">
+            مبادئ المحاسبة، شرح البرامج، والتطبيق العملي في ألمانيا
+          </h2>
+          <p style="margin: 0; color: #94a3b8; font-size: 15px;">
+            مرجع عملي خطوة بخطوة لمن يستعد للعمل كمحاسب أو موظف Buchhaltung في الشركات والمكاتب المحاسبية بألمانيا.
+          </p>
+        </div>
 
-    <div style="background: #1e293b; border: 1px solid rgba(148, 163, 184, 0.16); border-radius: 12px; padding: 18px;">
-      <h3 style="margin: 0 0 10px 0; color: #38bdf8; font-size: 17px;">دليل الحسابات الألماني SKR 03 و SKR 04</h3>
-      <p style="margin: 0 0 10px 0; color: #cbd5e1; font-size: 14px; line-height: 1.7;">
-        بدلاً من حفظ أسماء الحسابات فقط، ستتعامل مع أرقام حسابات موحدة (<strong>Kontenrahmen</strong>) أشهرها:
-      </p>
-      <ul style="margin: 0; padding-right: 18px; color: #94a3b8; font-size: 13.5px; line-height: 1.7;">
-        <li><strong>SKR 03:</strong> مرتب حسب <em>Prozessgliederung</em> (تسلسل العمليات التشغيلية).</li>
-        <li><strong>SKR 04:</strong> مرتب حسب <em>Abschlussgliederung</em> (ترتيب قائمة المركز المالي والميزانية من الأصول إلى المصروفات).</li>
-        <li>في المكاتب المحاسبية والشركات ستجد أرقاماً ثابتة مثل حسابات البنك، الموردين (<em>Kreditoren</em>)، والعملاء (<em>Debitoren</em>).</li>
-      </ul>
-    </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <button type="button" onclick="switchBuchtTab('prinzipien')" id="btn-prinzipien" style="cursor: pointer; padding: 10px 16px; border-radius: 10px; border: 1px solid #38bdf8; background: #0284c7; color: #fff; font-weight: 600; font-size: 14px;">
+            1. مبادئ المحاسبة
+          </button>
+          <button type="button" onclick="switchBuchtTab('software')" id="btn-software" style="cursor: pointer; padding: 10px 16px; border-radius: 10px; border: 1px solid rgba(148, 163, 184, 0.3); background: #1e293b; color: #e2e8f0; font-weight: 600; font-size: 14px;">
+            2. البرامج المحاسبية
+          </button>
+          <button type="button" onclick="switchBuchtTab('praxis')" id="btn-praxis" style="cursor: pointer; padding: 10px 16px; border-radius: 10px; border: 1px solid rgba(148, 163, 184, 0.3); background: #1e293b; color: #e2e8f0; font-weight: 600; font-size: 14px;">
+            3. التطبيق العملي اليومي
+          </button>
+        </div>
+      </div>
 
-    <div style="background: #1e293b; border: 1px solid rgba(148, 163, 184, 0.16); border-radius: 12px; padding: 18px;">
-      <h3 style="margin: 0 0 10px 0; color: #38bdf8; font-size: 17px;">ضريبة القيمة المضافة USt و Vorsteuer</h3>
-      <p style="margin: 0 0 10px 0; color: #cbd5e1; font-size: 14px; line-height: 1.7;">
-        النسبة القياسية في ألمانيا هي <strong>19%</strong> والنسبة المخفضة <strong>7%</strong> (لبعض المواد الغذائية والكتب والخدمات المحددة).
-      </p>
-      <ul style="margin: 0; padding-right: 18px; color: #94a3b8; font-size: 13.5px; line-height: 1.7;">
-        <li><strong>Vorsteuer:</strong> ضريبة المشتريات التي تدفعها الشركة للموردين وتُخصم من الضريبة المستحقة.</li>
-        <li><strong>Umsatzsteuer (USt):</strong> الضريبة التي تحصلها الشركة من العملاء لصالح مكتب الضرائب (<em>Finanzamt</em>).</li>
-        <li>تُقدّم الإقرارات الدورية عبر <strong>UStVA</strong> (شهرياً أو ربع سنوي حسب الحالة).</li>
-      </ul>
-    </div>
+      <!-- المحور الأول: مبادئ المحاسبة في ألمانيا -->
+      <div id="tab-prinzipien" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px;">
+        <div class="searchable-card" style="background: #1e293b; border: 1px solid rgba(148, 163, 184, 0.16); border-radius: 12px; padding: 18px;">
+          <h3 style="margin: 0 0 10px 0; color: #38bdf8; font-size: 17px;">القيد المزدوج وقاعدة Soll / Haben</h3>
+          <p style="margin: 0 0 10px 0; color: #cbd5e1; font-size: 14px; line-height: 1.7;">
+            في ألمانيا تعتمد المحاسبة النظامية على <strong>Doppelte Buchführung</strong>: كل عملية مالية تؤثر على حسابين على الأقل (مدين <strong>Soll</strong> ودائن <strong>Haben</strong>) بقيمة متساوية.
+          </p>
+          <ul style="margin: 0; padding-right: 18px; color: #94a3b8; font-size: 13.5px; line-height: 1.7;">
+            <li><strong>Aktivkonten (الأصول):</strong> تزيد في <em>Soll</em> وتنقص في <em>Haben</em>.</li>
+            <li><strong>Passivkonten (الخصوم وحقوق الملكية):</strong> تزيد في <em>Haben</em> وتنقص في <em>Soll</em>.</li>
+            <li><strong>Aufwand (المصروفات):</strong> تُسجّل غالباً في <em>Soll</em>.</li>
+            <li><strong>Ertrag (الإيرادات):</strong> تُسجّل غالباً في <em>Haben</em>.</li>
+          </ul>
+        </div>
 
-    <div style="background: #1e293b; border: 1px solid rgba(148, 163, 184, 0.16); border-radius: 12px; padding: 18px;">
-      <h3 style="margin: 0 0 10px 0; color: #38bdf8; font-size: 17px;">EÜR مقابل Bilanz و GoBD</h3>
-      <p style="margin: 0 0 10px 0; color: #cbd5e1; font-size: 14px; line-height: 1.7;">
-        تختلف طريقة إعداد النتائج والقوائم حسب الشكل القانوني وحجم الأعمال:
-      </p>
-      <ul style="margin: 0; padding-right: 18px; color: #94a3b8; font-size: 13.5px; line-height: 1.7;">
-        <li><strong>EÜR (Einnahmen-Überschuss-Rechnung):</strong> حساب فائض الإيرادات على المصروفات (يُستخدم غالباً للمستقلين <em>Freiberufler</em> وبعض الأنشطة الصغيرة وفق الشروط القانونية).</li>
-        <li><strong>Bilanz (الميزانية العمومية + GuV):</strong> إلزامية للشركات مثل <em>GmbH</em> و <em>UG</em> والمنشآت التي تتجاوز حدود الإعفاء.</li>
-        <li><strong>GoBD:</strong> قواعد حفظ المستندات والدفاتر الإلكترونية بدقة، وعدم التلاعب أو حذف القيود دون أثر تدقيقي.</li>
-      </ul>
-    </div>
-  </div>
+        <div class="searchable-card" style="background: #1e293b; border: 1px solid rgba(148, 163, 184, 0.16); border-radius: 12px; padding: 18px;">
+          <h3 style="margin: 0 0 10px 0; color: #38bdf8; font-size: 17px;">دليل الحسابات الألماني SKR 03 و SKR 04</h3>
+          <p style="margin: 0 0 10px 0; color: #cbd5e1; font-size: 14px; line-height: 1.7;">
+            بدلاً من حفظ أسماء الحسابات فقط، ستتعامل مع أرقام حسابات موحدة (<strong>Kontenrahmen</strong>) أشهرها:
+          </p>
+          <ul style="margin: 0; padding-right: 18px; color: #94a3b8; font-size: 13.5px; line-height: 1.7;">
+            <li><strong>SKR 03:</strong> مرتب حسب <em>Prozessgliederung</em> (تسلسل العمليات التشغيلية).</li>
+            <li><strong>SKR 04:</strong> مرتب حسب <em>Abschlussgliederung</em> (ترتيب قائمة المركز المالي والميزانية من الأصول إلى المصروفات).</li>
+            <li>في المكاتب المحاسبية والشركات ستجد أرقاماً ثابتة مثل حسابات البنك، الموردين (<em>Kreditoren</em>)، والعملاء (<em>Debitoren</em>).</li>
+          </ul>
+        </div>
 
-  <!-- المحور الثاني: شرح البرامج المحاسبية في ألمانيا -->
-  <div id="tab-software" style="display: none; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px;">
-    <div style="background: #1e293b; border: 1px solid rgba(148, 163, 184, 0.16); border-radius: 12px; padding: 18px;">
-      <h3 style="margin: 0 0 10px 0; color: #34d399; font-size: 17px;">DATEV (المعيار الأساسي في ألمانيا)</h3>
-      <p style="margin: 0 0 10px 0; color: #cbd5e1; font-size: 14px; line-height: 1.7;">
-        البرنامج الأكثر انتشاراً لدى مكاتب المحاسبة (<em>Steuerberater</em>) والمتوسطة والكبيرة في ألمانيا، مثل <strong>DATEV Unternehmen online</strong> و<strong>Kanzlei-Rechnungswesen</strong>.
-      </p>
-      <ul style="margin: 0; padding-right: 18px; color: #94a3b8; font-size: 13.5px; line-height: 1.7;">
-        <li><strong>ما ستفعله عليه:</strong> رفع الفواتير الرقمية، التوجيه المحاسبي (<em>Belege buchen</em>)، مطابقة كشوف الحساب البنكية، وتصدير البيانات للمستشار الضريبي.</li>
-        <li><strong>نقطة قوة في السيرة الذاتية:</strong> إتقان مفاهيم DATEV يفتح أبواباً واسعة في سوق العمل الألماني.</li>
-      </ul>
-    </div>
+        <div class="searchable-card" style="background: #1e293b; border: 1px solid rgba(148, 163, 184, 0.16); border-radius: 12px; padding: 18px;">
+          <h3 style="margin: 0 0 10px 0; color: #38bdf8; font-size: 17px;">ضريبة القيمة المضافة USt و Vorsteuer</h3>
+          <p style="margin: 0 0 10px 0; color: #cbd5e1; font-size: 14px; line-height: 1.7;">
+            النسبة القياسية في ألمانيا هي <strong>19%</strong> والنسبة المخفضة <strong>7%</strong> (لبعض المواد الغذائية والكتب والخدمات المحددة).
+          </p>
+          <ul style="margin: 0; padding-right: 18px; color: #94a3b8; font-size: 13.5px; line-height: 1.7;">
+            <li><strong>Vorsteuer:</strong> ضريبة المشتريات التي تدفعها الشركة للموردين وتُخصم من الضريبة المستحقة.</li>
+            <li><strong>Umsatzsteuer (USt):</strong> الضريبة التي تحصلها الشركة من العملاء لصالح مكتب الضرائب (<em>Finanzamt</em>).</li>
+            <li>تُقدّم الإقرارات الدورية عبر <strong>UStVA</strong> (شهرياً أو ربع سنوي حسب الحالة).</li>
+          </ul>
+        </div>
 
-    <div style="background: #1e293b; border: 1px solid rgba(148, 163, 184, 0.16); border-radius: 12px; padding: 18px;">
-      <h3 style="margin: 0 0 10px 0; color: #34d399; font-size: 17px;">Lexware (شائع لدى الشركات الصغيرة والمتوسطة)</h3>
-      <p style="margin: 0 0 10px 0; color: #cbd5e1; font-size: 14px; line-height: 1.7;">
-        مجموعة برامج عملية جداً للشركات الصغيرة والمتوسطة (<em>KMU</em>) تغطي المحاسبة المالية، الفوترة، والرواتب (<em>Lohn & Gehalt</em>).
-      </p>
-      <ul style="margin: 0; padding-right: 18px; color: #94a3b8; font-size: 13.5px; line-height: 1.7;">
-        <li><strong>ما ستفعله عليه:</strong> إصدار فواتير العملاء، تسجيل فواتير الموردين، إدارة المدفوعات، وتجهيز بيانات الضرائب.</li>
-        <li><strong>ميزة عملية:</strong> واجهته مباشرة وسهلة للتدرب السريع على دورة المحاسبة الكاملة.</li>
-      </ul>
-    </div>
+        <div class="searchable-card" style="background: #1e293b; border: 1px solid rgba(148, 163, 184, 0.16); border-radius: 12px; padding: 18px;">
+          <h3 style="margin: 0 0 10px 0; color: #38bdf8; font-size: 17px;">EÜR مقابل Bilanz و GoBD</h3>
+          <p style="margin: 0 0 10px 0; color: #cbd5e1; font-size: 14px; line-height: 1.7;">
+            تختلف طريقة إعداد النتائج والقوائم حسب الشكل القانوني وحجم الأعمال:
+          </p>
+          <ul style="margin: 0; padding-right: 18px; color: #94a3b8; font-size: 13.5px; line-height: 1.7;">
+            <li><strong>EÜR (Einnahmen-Überschuss-Rechnung):</strong> حساب فائض الإيرادات على المصروفات (يُستخدم غالباً للمستقلين <em>Freiberufler</em> وبعض الأنشطة الصغيرة وفق الشروط القانونية).</li>
+            <li><strong>Bilanz (الميزانية العمومية + GuV):</strong> إلزامية للشركات مثل <em>GmbH</em> و <em>UG</em> والمنشآت التي تتجاوز حدود الإعفاء.</li>
+            <li><strong>GoBD:</strong> قواعد حفظ المستندات والدفاتر الإلكترونية بدقة، وعدم التلاعب أو حذف القيود دون أثر تدقيقي.</li>
+          </ul>
+        </div>
+      </div>
 
-    <div style="background: #1e293b; border: 1px solid rgba(148, 163, 184, 0.16); border-radius: 12px; padding: 18px;">
-      <h3 style="margin: 0 0 10px 0; color: #34d399; font-size: 17px;">sevDesk و Billomat (أنظمة سحابية حديثة)</h3>
-      <p style="margin: 0 0 10px 0; color: #cbd5e1; font-size: 14px; line-height: 1.7;">
-        برامج سحابية حديثة تعتمد عليها الشركات الناشئة والمتاجر الإلكترونية والمنشآت الحديثة لتسريع العمل اليومي.
-      </p>
-      <ul style="margin: 0; padding-right: 18px; color: #94a3b8; font-size: 13.5px; line-height: 1.7;">
-        <li><strong>ما ستفعله عليه:</strong> قراءة الفواتير تلقائياً (OCR)، ربط الحسابات البنكية (<em>Banking / API</em>)، وتجهيز تصدير واضح لـ <em>Steuerberater</em>.</li>
-      </ul>
-    </div>
+      <!-- المحور الثاني: شرح البرامج المحاسبية في ألمانيا -->
+      <div id="tab-software" style="display: none; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px;">
+        <div class="searchable-card" style="background: #1e293b; border: 1px solid rgba(148, 163, 184, 0.16); border-radius: 12px; padding: 18px;">
+          <h3 style="margin: 0 0 10px 0; color: #34d399; font-size: 17px;">DATEV (المعيار الأساسي في ألمانيا)</h3>
+          <p style="margin: 0 0 10px 0; color: #cbd5e1; font-size: 14px; line-height: 1.7;">
+            البرنامج الأكثر انتشاراً لدى مكاتب المحاسبة (<em>Steuerberater</em>) والمتوسطة والكبيرة في ألمانيا، مثل <strong>DATEV Unternehmen online</strong> و<strong>Kanzlei-Rechnungswesen</strong>.
+          </p>
+          <ul style="margin: 0; padding-right: 18px; color: #94a3b8; font-size: 13.5px; line-height: 1.7;">
+            <li><strong>ما ستفعله عليه:</strong> رفع الفواتير الرقمية، التوجيه المحاسبي (<em>Belege buchen</em>)، مطابقة كشوف الحساب البنكية، وتصدير البيانات للمستشار الضريبي.</li>
+            <li><strong>نقطة قوة في السيرة الذاتية:</strong> إتقان مفاهيم DATEV يفتح أبواباً واسعة في سوق العمل الألماني.</li>
+          </ul>
+        </div>
 
-    <div style="background: #1e293b; border: 1px solid rgba(148, 163, 184, 0.16); border-radius: 12px; padding: 18px;">
-      <h3 style="margin: 0 0 10px 0; color: #34d399; font-size: 17px;">SAP و Excel (للشركات الكبيرة والتحليل)</h3>
-      <p style="margin: 0 0 10px 0; color: #cbd5e1; font-size: 14px; line-height: 1.7;">
-        في الشركات الكبيرة ستجد وحدات مثل <strong>SAP FI/CO</strong>، وبجانب أي برنامج ستحتاج إلى <strong>Excel</strong> للمطابقات والتقارير.
-      </p>
-      <ul style="margin: 0; padding-right: 18px; color: #94a3b8; font-size: 13.5px; line-height: 1.7;">
-        <li><strong>مهارات Excel المطلوبة:</strong> <em>XLOOKUP / VLOOKUP</em>، <em>PivotTables</em>، <em>SUMIFS</em>، ومطابقة كشوف الحساب (<em>Abstimmung</em>).</li>
-      </ul>
-    </div>
-  </div>
+        <div class="searchable-card" style="background: #1e293b; border: 1px solid rgba(148, 163, 184, 0.16); border-radius: 12px; padding: 18px;">
+          <h3 style="margin: 0 0 10px 0; color: #34d399; font-size: 17px;">Lexware (شائع لدى الشركات الصغيرة والمتوسطة)</h3>
+          <p style="margin: 0 0 10px 0; color: #cbd5e1; font-size: 14px; line-height: 1.7;">
+            مجموعة برامج عملية جداً للشركات الصغيرة والمتوسطة (<em>KMU</em>) تغطي المحاسبة المالية، الفوترة، والرواتب (<em>Lohn &amp; Gehalt</em>).
+          </p>
+          <ul style="margin: 0; padding-right: 18px; color: #94a3b8; font-size: 13.5px; line-height: 1.7;">
+            <li><strong>ما ستفعله عليه:</strong> إصدار فواتير العملاء، تسجيل فواتير الموردين، إدارة المدفوعات، وتجهيز بيانات الضرائب.</li>
+            <li><strong>ميزة عملية:</strong> واجهته مباشرة وسهلة للتدرب السريع على دورة المحاسبة الكاملة.</li>
+          </ul>
+        </div>
 
-  <!-- المحور الثالث: التطبيق العملي اليومي -->
-  <div id="tab-praxis" style="display: none; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px;">
-    <div style="background: #1e293b; border: 1px solid rgba(148, 163, 184, 0.16); border-radius: 12px; padding: 18px;">
-      <h3 style="margin: 0 0 10px 0; color: #fbbf24; font-size: 17px;">الخطوة 1: فحص الفاتورة (Pflichtangaben)</h3>
-      <p style="margin: 0; color: #cbd5e1; font-size: 14px; line-height: 1.7;">
-        قبل تسجيل أي فاتورة واردة (<em>Eingangsrechnung</em>) أو صادرة (<em>Ausgangsrechnung</em>)، تحقق من وجود البيانات الإلزامية وفق قانون الضرائب الألماني: اسم وعنوان المرسل والمستلم، الرقم الضريبي (<em>Steuernummer</em> أو <em>USt-IdNr.</em>)، تاريخ الفاتورة، رقم فاتورة تسلسلي فريد، وصف الخدمة/السلعة وكميتها، المبلغ الصافي (<em>Netto</em>)، نسبة/قيمة الضريبة، والإجمالي (<em>Brutto</em>).
-      </p>
-    </div>
+        <div class="searchable-card" style="background: #1e293b; border: 1px solid rgba(148, 163, 184, 0.16); border-radius: 12px; padding: 18px;">
+          <h3 style="margin: 0 0 10px 0; color: #34d399; font-size: 17px;">sevDesk و Billomat (أنظمة سحابية حديثة)</h3>
+          <p style="margin: 0 0 10px 0; color: #cbd5e1; font-size: 14px; line-height: 1.7;">
+            برامج سحابية حديثة تعتمد عليها الشركات الناشئة والمتاجر الإلكترونية والمنشآت الحديثة لتسريع العمل اليومي.
+          </p>
+          <ul style="margin: 0; padding-right: 18px; color: #94a3b8; font-size: 13.5px; line-height: 1.7;">
+            <li><strong>ما ستفعله عليه:</strong> قراءة الفواتير تلقائياً (OCR)، ربط الحسابات البنكية (<em>Banking / API</em>)، وتجهيز تصدير واضح لـ <em>Steuerberater</em>.</li>
+          </ul>
+        </div>
 
-    <div style="background: #1e293b; border: 1px solid rgba(148, 163, 184, 0.16); border-radius: 12px; padding: 18px;">
-      <h3 style="margin: 0 0 10px 0; color: #fbbf24; font-size: 17px;">الخطوة 2: التوجيه المحاسبي (Kontierung)</h3>
-      <p style="margin: 0; color: #cbd5e1; font-size: 14px; line-height: 1.7;">
-        حدد نوع المستند وحسابه: هل هو مصروف تشغيلي (مثال: إيجار مكتب، اتصالات، قرطاسية، اشتراك برمجيات) أم أصل ثابت (<em>Anlagegut</em> يُستهلك عبر الزمن) أم فاتورة عميل؟ ثم حدد رمز الضريبة المناسب (19%، 7%، أو معفى/عكسي <em>Reverse Charge §13b UStG</em>).
-      </p>
-    </div>
+        <div class="searchable-card" style="background: #1e293b; border: 1px solid rgba(148, 163, 184, 0.16); border-radius: 12px; padding: 18px;">
+          <h3 style="margin: 0 0 10px 0; color: #34d399; font-size: 17px;">SAP و Excel (للشركات الكبيرة والتحليل)</h3>
+          <p style="margin: 0 0 10px 0; color: #cbd5e1; font-size: 14px; line-height: 1.7;">
+            في الشركات الكبيرة ستجد وحدات مثل <strong>SAP FI/CO</strong>، وبجانب أي برنامج ستحتاج إلى <strong>Excel</strong> للمطابقات والتقارير.
+          </p>
+          <ul style="margin: 0; padding-right: 18px; color: #94a3b8; font-size: 13.5px; line-height: 1.7;">
+            <li><strong>مهارات Excel المطلوبة:</strong> <em>XLOOKUP / VLOOKUP</em>، <em>PivotTables</em>، <em>SUMIFS</em>، ومطابقة كشوف الحساب (<em>Abstimmung</em>).</li>
+          </ul>
+        </div>
+      </div>
 
-    <div style="background: #1e293b; border: 1px solid rgba(148, 163, 184, 0.16); border-radius: 12px; padding: 18px;">
-      <h3 style="margin: 0 0 10px 0; color: #fbbf24; font-size: 17px;">الخطوة 3: التسجيل والمطابقة البنكية</h3>
-      <p style="margin: 0; color: #cbd5e1; font-size: 14px; line-height: 1.7;">
-        أدخل القيد في البرنامج بتاريخ المستند (<em>Belegdatum</em>) وبيان واضح (<em>Buchungstext</em>)، ثم طابق حركات البنك (<em>Bankabstimmung</em>): اربط كل دفعة واردة أو صادرة بالفاتورة المقابلة، وتابع البنود المفتوحة (<em>Offene Posten / OP-Liste</em>) مثل الفواتير غير المدفوعة أو المتأخرة.
-      </p>
-    </div>
+      <!-- المحور الثالث: التطبيق العملي اليومي -->
+      <div id="tab-praxis" style="display: none; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px;">
+        <div class="searchable-card" style="background: #1e293b; border: 1px solid rgba(148, 163, 184, 0.16); border-radius: 12px; padding: 18px;">
+          <h3 style="margin: 0 0 10px 0; color: #fbbf24; font-size: 17px;">الخطوة 1: فحص الفاتورة (Pflichtangaben)</h3>
+          <p style="margin: 0; color: #cbd5e1; font-size: 14px; line-height: 1.7;">
+            قبل تسجيل أي فاتورة واردة (<em>Eingangsrechnung</em>) أو صادرة (<em>Ausgangsrechnung</em>)، تحقق من وجود البيانات الإلزامية وفق قانون الضرائب الألماني: اسم وعنوان المرسل والمستلم، الرقم الضريبي (<em>Steuernummer</em> أو <em>USt-IdNr.</em>)، تاريخ الفاتورة، رقم فاتورة تسلسلي فريد، وصف الخدمة/السلعة وكميتها، المبلغ الصافي (<em>Netto</em>)، نسبة/قيمة الضريبة، والإجمالي (<em>Brutto</em>).
+          </p>
+        </div>
 
-    <div style="background: #1e293b; border: 1px solid rgba(148, 163, 184, 0.16); border-radius: 12px; padding: 18px;">
-      <h3 style="margin: 0 0 10px 0; color: #fbbf24; font-size: 17px;">الخطوة 4: تدريب عملي يمكنك تنفيذه اليوم</h3>
-      <p style="margin: 0; color: #cbd5e1; font-size: 14px; line-height: 1.7;">
-        حضّر 10 فواتير تجريبية (شراء لابتوب مكتبي، فاتورة إنترنت، فاتورة مطعم عمل مع مراعاة قواعد الضيافة، فاتورة بيع لعميل بضريبة 19%)، حدد لكل واحدة <em>Soll</em> و <em>Haben</em> ورقم الحساب في SKR 03 أو SKR 04، واحسب <em>Netto</em> و <em>MwSt.</em> و <em>Brutto</em>، ثم راجع الفروقات.
-      </p>
-    </div>
-  </div>
+        <div class="searchable-card" style="background: #1e293b; border: 1px solid rgba(148, 163, 184, 0.16); border-radius: 12px; padding: 18px;">
+          <h3 style="margin: 0 0 10px 0; color: #fbbf24; font-size: 17px;">الخطوة 2: التوجيه المحاسبي (Kontierung)</h3>
+          <p style="margin: 0; color: #cbd5e1; font-size: 14px; line-height: 1.7;">
+            حدد نوع المستند وحسابه: هل هو مصروف تشغيلي (مثال: إيجار مكتب، اتصالات، قرطاسية، اشتراك برمجيات) أم أصل ثابت (<em>Anlagegut</em> يُستهلك عبر الزمن) أم فاتورة عميل؟ ثم حدد رمز الضريبة المناسب (19%، 7%، أو معفى/عكسي <em>Reverse Charge §13b UStG</em>).
+          </p>
+        </div>
+
+        <div class="searchable-card" style="background: #1e293b; border: 1px solid rgba(148, 163, 184, 0.16); border-radius: 12px; padding: 18px;">
+          <h3 style="margin: 0 0 10px 0; color: #fbbf24; font-size: 17px;">الخطوة 3: التسجيل والمطابقة البنكية</h3>
+          <p style="margin: 0; color: #cbd5e1; font-size: 14px; line-height: 1.7;">
+            أدخل القيد في البرنامج بتاريخ المستند (<em>Belegdatum</em>) وبيان واضح (<em>Buchungstext</em>)، ثم طابق حركات البنك (<em>Bankabstimmung</em>): اربط كل دفعة واردة أو صادرة بالفاتورة المقابلة، وتابع البنود المفتوحة (<em>Offene Posten / OP-Liste</em>) مثل الفواتير غير المدفوعة أو المتأخرة.
+          </p>
+        </div>
+
+        <div class="searchable-card" style="background: #1e293b; border: 1px solid rgba(148, 163, 184, 0.16); border-radius: 12px; padding: 18px;">
+          <h3 style="margin: 0 0 10px 0; color: #fbbf24; font-size: 17px;">الخطوة 4: تدريب عملي يمكنك تنفيذه اليوم</h3>
+          <p style="margin: 0; color: #cbd5e1; font-size: 14px; line-height: 1.7;">
+            حضّر 10 فواتير تجريبية (شراء لابتوب مكتبي، فاتورة إنترنت، فاتورة مطعم عمل مع مراعاة قواعد الضيافة، فاتورة بيع لعميل بضريبة 19%)، حدد لكل واحدة <em>Soll</em> و <em>Haben</em> ورقم الحساب في SKR 03 أو SKR 04، واحسب <em>Netto</em> و <em>MwSt.</em> و <em>Brutto</em>، ثم راجع الفروقات.
+          </p>
+        </div>
+      </div>
+
+      <script>
+        function switchBuchtTab(tabName) {
+          const tabs = ['prinzipien', 'software', 'praxis'];
+          tabs.forEach((t) => {
+            const panel = document.getElementById('tab-' + t);
+            const btn = document.getElementById('btn-' + t);
+            if (!panel || !btn) return;
+            const active = t === tabName;
+            panel.style.display = active ? 'grid' : 'none';
+            btn.style.background = active ? '#0284c7' : '#1e293b';
+            btn.style.borderColor = active ? '#38bdf8' : 'rgba(148, 163, 184, 0.3)';
+            btn.style.color = active ? '#ffffff' : '#e2e8f0';
+          });
+        }
+      </script>
+    </section>
+
+    <!-- حاسبة ضريبة القيمة المضافة MwSt. -->
+    <section id="vat-calculator" class="section-box">
+      <div class="section-header">
+        <h2>حاسبة ضريبة القيمة المضافة (MwSt. / USt)</h2>
+        <p>احسب المبلغ الصافي (Netto)، قيمة الضريبة، والمبلغ الإجمالي (Brutto) وفق النسب الألمانية 19% و 7%.</p>
+      </div>
+
+      <div class="vat-controls">
+        <input
+          type="number"
+          id="netInput"
+          class="vat-input"
+          value="1000"
+          min="0"
+          step="0.01"
+          aria-label="المبلغ الصافي Netto"
+          oninput="calculateVat()"
+        />
+        <button type="button" id="rate19Btn" class="vat-rate-btn active" onclick="setVatRate(19)">
+          19% (القياسية)
+        </button>
+        <button type="button" id="rate7Btn" class="vat-rate-btn" onclick="setVatRate(7)">
+          7% (المخفضة)
+        </button>
+      </div>
+
+      <div class="vat-grid">
+        <div class="vat-card">
+          <div class="vat-label">الصافي (Netto)</div>
+          <div id="netOutput" class="vat-value">€ 1.000,00</div>
+        </div>
+        <div class="vat-card">
+          <div class="vat-label" id="vatRateLabel">الضريبة (19%)</div>
+          <div id="vatOutput" class="vat-value">€ 190,00</div>
+        </div>
+        <div class="vat-card">
+          <div class="vat-label">الإجمالي (Brutto)</div>
+          <div id="grossOutput" class="vat-value">€ 1.190,00</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- القاموس المحاسبي السريع -->
+    <section id="glossary-section" class="section-box">
+      <div class="section-header">
+        <h2>القاموس المحاسبي السريع (Buchhaltung-Glossar)</h2>
+        <p>أهم المصطلحات الألمانية التي ستواجهها يومياً في الشركات ومكاتب المحاسبة.</p>
+      </div>
+
+      <div class="glossary-grid">
+        <div class="glossary-card searchable-card">
+          <div class="glossary-term">Beleg / Buchungssatz</div>
+          <p class="glossary-desc">المستند المحاسبي (فاتورة، إيصال، كشف حساب) والقيد المحاسبي المسجّل بناءً عليه.</p>
+        </div>
+        <div class="glossary-card searchable-card">
+          <div class="glossary-term">Kreditoren / Debitoren</div>
+          <p class="glossary-desc">الموردون الدائنون (حسابات الموردين) والعملاء المدينون (حسابات العملاء).</p>
+        </div>
+        <div class="glossary-card searchable-card">
+          <div class="glossary-term">Offene Posten (OP)</div>
+          <p class="glossary-desc">الفواتير أو البنود المفتوحة التي لم تُسوّ أو تُدفع بالكامل بعد.</p>
+        </div>
+        <div class="glossary-card searchable-card">
+          <div class="glossary-term">Steuerberater / Finanzamt</div>
+          <p class="glossary-desc">المستشار الضريبي أو مكتب المحاسبة، ومصلحة الضرائب الحكومية في ألمانيا.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    ELSAYEDELSONBATI • elsayedelsonbati.com • منصة تعليمية للمحاسبة في ألمانيا
+  </footer>
 
   <script>
-    function switchBuchtTab(tabName) {
-      const tabs = ['prinzipien', 'software', 'praxis'];
-      tabs.forEach((t) => {
-        const panel = document.getElementById('tab-' + t);
-        const btn = document.getElementById('btn-' + t);
-        if (!panel || !btn) return;
-        const active = t === tabName;
-        panel.style.display = active ? 'grid' : 'none';
-        btn.style.background = active ? '#0284c7' : '#1e293b';
-        btn.style.borderColor = active ? '#38bdf8' : 'rgba(148, 163, 184, 0.3)';
-        btn.style.color = active ? '#ffffff' : '#e2e8f0';
+    let currentVatRate = 19;
+
+    function formatEuro(num) {
+      return "€ " + Number(num || 0).toLocaleString("de-DE", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
       });
     }
+
+    function setVatRate(rate) {
+      currentVatRate = rate;
+      document.getElementById("rate19Btn").classList.toggle("active", rate === 19);
+      document.getElementById("rate7Btn").classList.toggle("active", rate === 7);
+      document.getElementById("vatRateLabel").textContent = "الضريبة (" + rate + "%)";
+      calculateVat();
+    }
+
+    function calculateVat() {
+      const net = parseFloat(document.getElementById("netInput").value) || 0;
+      const vat = (net * currentVatRate) / 100;
+      const gross = net + vat;
+
+      document.getElementById("netOutput").textContent = formatEuro(net);
+      document.getElementById("vatOutput").textContent = formatEuro(vat);
+      document.getElementById("grossOutput").textContent = formatEuro(gross);
+    }
+
+    function filterContent() {
+      const query = (document.getElementById("siteSearchInput").value || "").trim().toLowerCase();
+      const cards = document.querySelectorAll(".searchable-card");
+
+      cards.forEach((card) => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = !query || text.includes(query) ? "" : "none";
+      });
+    }
+
+    calculateVat();
   </script>
-</section>
+</body>
+</html>
